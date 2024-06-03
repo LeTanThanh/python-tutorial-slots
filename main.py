@@ -1,4 +1,5 @@
 from point.point_2d import Point2D
+from point.point_3d import Point3D
 
 # Python __slots__
 
@@ -14,3 +15,9 @@ if __name__ == "__main__":
   print(Point2D.__dict__)
   Point2D.color = "black"
   print(Point2D.__dict__)
+
+  ## Python __slots__ and single inheritance
+
+  point_3d = Point3D(1, 2, 3)
+  # print(point_3d.__dict__)  # AttributeError: 'Point3D' object has no attribute '__dict__'. Did you mean: '__dir__'?
+  print(point_3d.__slots__)   # ("z")
