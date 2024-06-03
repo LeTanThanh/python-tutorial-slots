@@ -1,4 +1,5 @@
-class Point2D:
+from .shape import Shape
+class Point2D(Shape):
   __slots__ = ("x", "y")
 
   def __init__(self, x, y) -> None:

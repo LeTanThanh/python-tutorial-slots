@@ -21,3 +21,13 @@ if __name__ == "__main__":
   point_3d = Point3D(1, 2, 3)
   # print(point_3d.__dict__)  # AttributeError: 'Point3D' object has no attribute '__dict__'. Did you mean: '__dir__'?
   print(point_3d.__slots__)   # ("z")
+
+  ## The base class doesn’t use __slots__ and the subclass doesn’t
+
+  point_2d = Point2D(1, 2)
+  print(point_2d.__dict__)  # {}
+  print(point_2d.__slots__) # ("x", "y")
+
+  point_2d.color = "black"
+  print(point_2d.__dict__)  # {"color": "black"}
+  print(point_2d.__slots__) # ("x", "y")
